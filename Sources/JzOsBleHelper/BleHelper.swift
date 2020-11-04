@@ -93,6 +93,7 @@ public class BleHelper:NSObject,CBCentralManagerDelegate, CBPeripheralDelegate {
         guard let deviceName = peripheral.name else {
             return
         }
+        print(advertisementData)
         DispatchQueue.main.async {
             self.callback.scanBack(peripheral)
         }
