@@ -12,7 +12,7 @@ public protocol BleCallBack {
     func onConnectSuccess()
     func rx(_ a: BleBinary)
     func tx(_ b: BleBinary)
-    func scanBack(_ device: CBPeripheral)
+    func scanBack(_ device: CBPeripheral,advertisementData: [String : Any], rssi RSSI: NSNumber)
     func needOpen()
 }
 

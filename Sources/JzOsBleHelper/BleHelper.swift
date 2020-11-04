@@ -95,7 +95,7 @@ public class BleHelper:NSObject,CBCentralManagerDelegate, CBPeripheralDelegate {
         }
         print(advertisementData)
         DispatchQueue.main.async {
-            self.callback.scanBack(peripheral)
+            self.callback.scanBack(peripheral,advertisementData: advertisementData,rssi: RSSI)
         }
     }
     
