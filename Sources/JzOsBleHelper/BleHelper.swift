@@ -66,7 +66,6 @@ public class BleHelper:NSObject,CBCentralManagerDelegate, CBPeripheralDelegate {
         DispatchQueue.main.async {
             self.callback.onConnecting()
         }
-        centralManager.stopScan()
         let user = UserDefaults.standard
         user.set(device.identifier.uuidString, forKey: "KEY_PERIPHERAL_UUID")
         user.synchronize()
