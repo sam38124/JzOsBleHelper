@@ -41,6 +41,9 @@ public class BleHelper:NSObject,CBCentralManagerDelegate, CBPeripheralDelegate {
         usleep(100*1000)
         return centralManager.state == .poweredOn
     }
+    open func isScanning()->Bool{
+        return centralManager.isScanning
+    }
     open func centralManagerDidUpdateState(_ central: CBCentralManager) {
         // 先判斷藍牙是否開啟，如果不是藍牙4.x ，也會傳回電源未開啟
         guard central.state == .poweredOn else {
