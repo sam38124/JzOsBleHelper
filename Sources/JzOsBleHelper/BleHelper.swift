@@ -133,7 +133,7 @@ public class BleHelper:NSObject,CBCentralManagerDelegate, CBPeripheralDelegate {
         for characteristic in service.characteristics! {
             let uuidString = characteristic.uuid.uuidString
             charDictionary[uuidString] = characteristic
-            print(uuidString)
+            print("channelID:\(uuidString)")
             peripheral.discoverDescriptors(for: characteristic)
         }
     }
