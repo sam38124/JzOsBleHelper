@@ -13,14 +13,8 @@
 
 <<a name="Import"></a>
 ## 如何導入到項目
-> 支持framework導入。 <br/>
+> 支持SwiftPackage。 <br/>
 
-#### 1.首先將framework拉入要導入的Project當中
-<img src="https://github.com/sam38124/JzOsFrameWork/blob/master/i2.png" width = "800"  alt="i1" /><a name="Use"></a>
-#### 2.將三個選項打勾
-<img src="https://github.com/sam38124/JzOsFrameWork/blob/master/i1.png" width = "800"  alt="i1" /><a name="Use"></a>
-#### 3.選擇Embed and signed
-<img src="https://github.com/sam38124/JzOsFrameWork/blob/master/i3.png" width = "800"  alt="i1" /><a name="Use"></a><a name="Use"></a>
 ## 如何使用
 ### 1.在要監聽藍牙的地方繼承BleCallBack
 
