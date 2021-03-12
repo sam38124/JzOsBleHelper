@@ -95,7 +95,7 @@ public class BleHelper:NSObject,CBCentralManagerDelegate, CBPeripheralDelegate {
         guard let deviceName = peripheral.name else {
             return
         }
-        print(advertisementData)
+        print("TheAdvertisementData:\(advertisementData)")
         DispatchQueue.main.async {
             self.callback.scanBack(peripheral,advertisementData: advertisementData,rssi: RSSI)
         }
@@ -254,13 +254,6 @@ extension String{
             data?.append([num] as [UInt8], length: 1)
             index = trimmedString.index(after: trimmedString.index(after: index))
         }
-        
-        //        for var index = trimmedString.startIndex; index < trimmedString.endIndex; index = trimmedString.index(after: trimmedString.index(after: index)) {
-        //            let byteString = trimmedString.substring(with: (index ..< trimmedString.index(after: trimmedString.index(after: index))))
-        //            let num = UInt8(byteString.withCString { strtoul($0, nil, 16) })
-        //            data?.append([num] as [UInt8], length: 1)
-        //        }
-        
         return data as Data?
     }
 }
