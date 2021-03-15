@@ -12,9 +12,9 @@ public class BleHelper:NSObject,CBCentralManagerDelegate, CBPeripheralDelegate {
         self.callback=callback
         super.init()
     }
-    var callback:BleCallBack! = nil
-    var IsConnect=false
-    var haveble=false
+    public var callback:BleCallBack! = nil
+    public var IsConnect=false
+    public var haveble=false
     open var bles:[CBPeripheral]=[CBPeripheral]()
     lazy var centralManager = CBCentralManager(delegate: self, queue: DispatchQueue.global())
     // 儲存連上的 peripheral，此變數一定要宣告為全域
