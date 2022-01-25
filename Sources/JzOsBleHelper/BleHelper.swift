@@ -137,18 +137,18 @@ public class BleHelper:NSObject,CBCentralManagerDelegate, CBPeripheralDelegate {
     /* 將資料傳送到 peripheral */
     open func sendData(_ data:Data,_ txchannel:String,_ rxchannel:String)  {
         guard let tx = charDictionary[txchannel] else {
-            print("寫入失敗")
+            print("設定寫入通道:\(txchannel)")
             return
         }
         guard let rx = charDictionary[rxchannel] else {
-            print("寫入失敗")
+            print("設定回覆通道:\(rxchannel)")
             return
         }
         connectPeripheral.setNotifyValue(true, for: rx)
         connectPeripheral.writeValue(
             data,
             for: tx,
-            type: .withoutResponse
+            type: .withResponse
         )
         DispatchQueue.main.async {
             self.callback.tx(BleBinary(data))
