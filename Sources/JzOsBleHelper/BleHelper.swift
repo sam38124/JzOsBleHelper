@@ -123,10 +123,12 @@ public class BleHelper:NSObject,CBCentralManagerDelegate, CBPeripheralDelegate {
             print(error!.localizedDescription)
             return
         }
-        self.IsConnect=true
-        DispatchQueue.main.async {
-            self.callback.onConnectSuccess()
+        if(!self.IsConnect){
+            DispatchQueue.main.async {
+                self.callback.onConnectSuccess()
+            }
         }
+        self.IsConnect=true
         for characteristic in service.characteristics! {
             let uuidString = characteristic.uuid.uuidString
             charDictionary[uuidString] = characteristic
