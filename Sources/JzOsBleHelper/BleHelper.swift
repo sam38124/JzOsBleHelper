@@ -92,9 +92,6 @@ public class BleHelper:NSObject,CBCentralManagerDelegate, CBPeripheralDelegate {
         unpair()
     }
     open func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        guard let deviceName = peripheral.name else {
-            return
-        }
         self.callback.scanBack(peripheral,advertisementData: advertisementData,rssi: RSSI)
     }
     
